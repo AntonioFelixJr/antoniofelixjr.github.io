@@ -19,10 +19,84 @@ layout: default
 </header>
 
 <div id="content">
-	<div id="particles-js"></div> <!-- stats - count particles -->
+	<h1>Projects</h1>
+	<hr>
+	<div id="card-container">
+		<div class="card">
+			<div class="card-title">
+				PROJETO TAL
+			</div>
+			<hr>
+			<div class="card-body">
 
+			</div>
+			<div class="card-footer">
+				PHP
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="card-title">
+				PROJETO TAL
+			</div>
+			<hr>
+			<div class="card-body">
+
+			</div>
+			<div class="card-footer">
+				PHP
+			</div>
+		</div>
+	</div>
 </div>
 
+
+<script>
+
+(function()
+{
+	getProjects()
+})()
+
+function getProjects()
+{
+	const xhr = new XMLHttpRequest()
+	xhr.open("GET", "{{ info.repos_url }}", true)
+	xhr.onload = function (e) {
+		if (xhr.readyState === 4) {
+			if (xhr.status === 200) {
+
+				var projects = JSON.parse(xhr.responseText)
+
+				projects = projects.map(project => {
+					return project = {
+						name: project.name, 
+						description: project.description, 
+						language: project.language 
+					} 
+				})
+
+				createCards(projects)
+			} else {
+				console.error(xhr.statusText)
+			}
+		}
+	}
+	xhr.onerror = function (e) {
+	console.error(xhr.statusText)
+	}
+	xhr.send(null); 
+
+}
+
+function createCards(projects)
+{
+	projects.forEach(element => {
+		console.table(element)	
+	})
+}
+
+</script>
 <script src="assets/js/particles.min.js"></script>
 <script>
 	particlesJS("header", {
