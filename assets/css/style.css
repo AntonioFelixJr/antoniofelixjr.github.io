@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;;
+}
+
+header {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    background-color: black;
+    background-image:  linear-gradient(to bottom, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 1) 65%), url("../images/universe.jpg");
+    height: 550px;
+}
+
+
+#content-header {
+    position: absolute;
+    display: flex;
+    color: whitesmoke;
+    flex-direction: column;
+    align-items: center;
+    left: 0%;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+
+}
+
+#content-header > img {
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    border: 2px solid whitesmoke;
+}
+
+#content-header > #info > #name {
+    margin-top: 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+#content-header > #info > #login {
+    font-size: 18px;
+}
+
+
+
+#content {
+    height: 1000px;
+    background-color: black;
+}
