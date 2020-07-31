@@ -5,8 +5,9 @@ layout: default
 <link rel="stylesheet" href="assets/css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
+{% assign info = site.data.git %}
+
 <header id="header">
-	{% assign info = site.data.git %}
 	<div id="content-header">
 		<img src="{{ info.avatar_url }}" alt="Antonio Felix" />
 		<div id="info">
@@ -66,7 +67,7 @@ layout: default
     detect_on: "window",
     events: {
       onhover: { enable: true, mode: "bubble" },
-      onclick: { enable: false, mode: "repulse" },
+      onclick: { enable: true, mode: "repulse" },
       resize: true
     },
     modes: {
@@ -79,7 +80,5 @@ layout: default
   },
   retina_detect: true
 });
-
-requestAnimationFrame(update);
 
 </script>
