@@ -61,11 +61,11 @@ header {
     background-color: rgb(10, 10, 10);
 }
 
-#content > hr {
+/* #content > hr {
     margin-top: 20px;
     margin-bottom: 20px;
     border: 1px dashed  blueviolet;
-}
+} */
 
 #card-container {
     padding: 50px;
@@ -93,7 +93,7 @@ header {
 
 .card-title {
     font-weight: 700;
-    border-bottom: 1px solid blueviolet;
+    border-bottom: 1px solid rgb(89, 141, 184);
     padding-top: 20px;
     height: 25px;
 }
@@ -108,7 +108,7 @@ header {
 
 .card-footer {
     flex-shrink: 0;
-    background-color: blueviolet;
+    background-color: rgb(89, 141, 184);
     height: 20px;
 
 
