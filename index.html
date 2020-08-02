@@ -18,38 +18,17 @@ layout: default
 	</div>	
 </header>
 
-<div id="content">
+<main id="content">
 	<h1>Projects</h1>
 	<hr>
 	<div id="card-container">
-		<div class="card">
-			<div class="card-title">
-				PROJETO TAL
-			</div>
-			<hr>
-			<div class="card-body">
 
-			</div>
-			<div class="card-footer">
-				PHP
-			</div>
-		</div>
-
-		<div class="card">
-			<div class="card-title">
-				PROJETO TAL
-			</div>
-			<hr>
-			<div class="card-body">
-
-			</div>
-			<div class="card-footer">
-				PHP
-			</div>
-		</div>
 	</div>
-</div>
+</main>
 
+<footer>
+	&copy; 2020 by Antonio Felix
+</footer>
 
 <script>
 
@@ -91,8 +70,33 @@ function getProjects()
 
 function createCards(projects)
 {
-	projects.forEach(element => {
-		console.table(element)	
+	projects.forEach(project => {
+
+		project.description = project.description ?? ''
+		project.language = project.language ?? ''
+
+		const card = document.createElement('div')
+		card.classList.add('card')
+
+		const cardTitle = document.createElement('div')
+		cardTitle.classList.add('card-title')
+		cardTitle.appendChild(document.createTextNode(project.name)) 
+
+
+		const cardBody = document.createElement('div')
+		cardBody.classList.add('card-body')
+		cardBody.appendChild(document.createTextNode(project.description)) 
+
+
+		const cardFooter = document.createElement('div')
+		cardFooter.classList.add('card-footer')
+		cardFooter.appendChild(document.createTextNode(project.language)) 
+
+		card.appendChild(cardTitle)
+		card.appendChild(cardBody)
+		card.appendChild(cardFooter)
+
+		document.getElementById('card-container').appendChild(card)
 	})
 }
 
@@ -101,7 +105,7 @@ function createCards(projects)
 <script>
 	particlesJS("header", {
   particles: {
-    number: { value: 200, density: { enable: true, value_area: 800 } },
+    number: { value: 500, density: { enable: true, value_area: 800 } },
     color: { value: "#ffffff" },
     shape: {
       type: "circle",
@@ -110,7 +114,7 @@ function createCards(projects)
       image: { src: "img/github.svg", width: 100, height: 100 }
     },
     opacity: {
-      value: 0.8,
+      value: 1,
       random: true,
       anim: { enable: true, speed: 1, opacity_min: 0, sync: false }
     },
