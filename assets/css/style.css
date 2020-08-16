@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+:root {
+    --main-color: rgb(89, 141, 184);
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -53,6 +57,24 @@ header {
 #content-header > #info > #login {
     font-size: 18px;
 }
+
+#login > a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#login:hover  {
+    animation: change-color 1s  alternate;
+    color: var(--main-color);
+}
+
+
+
+@keyframes change-color {
+    0%   {color: inherit;}
+    50%  {color: var(--main-color);}
+  }
+
 
 #content {
     color: white;
